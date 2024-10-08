@@ -23,7 +23,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
     'Terms & Conditions',
   ];
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
