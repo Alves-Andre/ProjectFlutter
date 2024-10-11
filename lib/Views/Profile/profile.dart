@@ -16,12 +16,6 @@ class _ProfileScreenState extends State<ProfileScreen> {
   final TextEditingController passwordController1 = TextEditingController();
   int actualIndex = 3;
 
-  final List functions = [
-    'Edit Name',
-    'Shipping Info',
-    'Notification',
-    'Terms & Conditions',
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +24,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: const Text(''),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(26.0),
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -40,7 +34,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 child: Title(
                   color: Colors.black,
                   child: const Text(
-                    'Profile',
+                    'Perfil',
                     style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                   ),
                 ),
@@ -62,37 +56,38 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           'Amanda Doe',
                           style: button1Bold,
                         ),
-                        Text(
-                          'amanda@gmail.com',
-                          style: paragraph3Regular,
-                        ),
                       ],
                     ),
                   ),
+                  const SizedBox(width: 20),
+                                    IconButton(
+                    icon: Icon(Icons.edit),
+                    onPressed: () {},
+                    ),
+                  const SizedBox(width: 20),
                 ],
               ),
-              const SizedBox(height: 20),
-              ...functions.map((name) => Column(
+              const SizedBox(height: 40),
+              const Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(16.0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text(name, style: paragraph1Regular),
-                            const Icon(Icons.arrow_forward_ios_rounded)
-                          ],
-                        ),
-                      ),
+                      Text("Partidas Jogadas", style: TextStyle(fontSize:20)),
+                      const SizedBox(height: 8),
+                      Text("100", style: TextStyle(fontSize: 46)),
                     ],
-                  )),
-              const Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.all(16.0),
-                  child: Text("Logout", style: TextStyle(color: Colors.red)),
+                    ),
+                    Column(
+                    children: [
+                      Text("% Vitórias", style: TextStyle(fontSize: 20)),
+                      const SizedBox(height: 8),
+                      Text("30%", style: TextStyle(fontSize: 46)),
+                    ],
+                    ),
+                  ],
                 ),
-              ),
+
             ],
           ),
         ),
